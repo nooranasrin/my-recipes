@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/header.astro';
+
+const { pageTitle } = Astro.props;
+---
+
+<BaseLayout title={pageTitle}>
+  <div class='page'>
+    <Header pageTitle={pageTitle} />
+    <div class='section'>
+      <slot />
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    background-color: rgba(219, 216, 216, 0.402);
+    width: 85vw;
+  }
+
+  .section {
+    border: 1px solid black;
+    background-color: white;
+    width: 80vw;
+    height: 85vh;
+    margin: 3vh auto;
+    border: 0.5px solid rgba(105, 108, 107, 0.4);
+    border-radius: 10px;
+  }
+</style>
