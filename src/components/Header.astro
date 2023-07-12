@@ -1,15 +1,20 @@
 ---
+import ThemeIcon from './ThemeIcon.astro';
 const { pageTitle } = Astro.props;
 ---
 
-<div>{pageTitle} Overview</div>
+<div class='header'>
+  <div>{pageTitle} Overview</div>
+  <ThemeIcon />
+</div>
 
 <style>
-  div {
-    background-color: white;
+  .header {
     height: 5vh;
     border-bottom: 0.5px solid rgba(105, 108, 107, 0.4);
     padding: 2vh 0 0 2vw;
     font-weight: 600;
+    position: relative;
+    display: flex;
   }
 </style>
